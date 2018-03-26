@@ -1,6 +1,5 @@
 'use strict';
 
-var Blob = require('blob');
 var blobUtil = require('blob-util');
 var secondsToTime = require('./secondsToTime');
 
@@ -28,7 +27,7 @@ module.exports = function () {
 
   this.toBlobUri = function () {
     var props = {type: 'text/vtt'};
-    var blob = new Blob(content, props);
+    var blob = blobUtil.createBlob(content, props);
     return blobUtil.createObjectURL(blob);
   };
 };
