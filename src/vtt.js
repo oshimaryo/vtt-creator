@@ -1,7 +1,7 @@
 'use strict';
 
 var Blob = require('blob');
-var blobUtil = require('blobUtil');
+var blobUtil = require('blob-util');
 var secondsToTime = require('./secondsToTime');
 
 module.exports = function () {
