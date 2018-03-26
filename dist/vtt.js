@@ -84,7 +84,7 @@
 	
 	  this.toBlobUri = function () {
 	    var props = {type: 'text/vtt'};
-	    var blob = blobUtil.createBlob(content, props);
+	    var blob = blobUtil.createBlob([content], props);
 	    return blobUtil.createObjectURL(blob);
 	  };
 	};
