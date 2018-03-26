@@ -1,5 +1,6 @@
 'use strict';
 
+var atob = require('atob');
 var secondsToTime = require('./secondsToTime');
 
 module.exports = function () {
@@ -22,5 +23,11 @@ module.exports = function () {
 
   this.toString = function () {
     return content;
+  };
+
+  this.toDataUri = function () {
+    var mimetype = 'text/vtt';
+    var charset = 'UTF-8';
+    return 'data:' + mimetype + ';charset=' + charset + ';base64,' + atob(content);
   };
 };

@@ -62,5 +62,8 @@
       "no-var": 0,
       "prefer-arrow-callback": 0
     }
+  },
+  "dependencies": {
+    "atob": "^2.0.3"
   }
 }
