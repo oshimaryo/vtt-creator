@@ -1,6 +1,7 @@
 'use strict';
 
-var atob = require('atob');
+var Blob = require('blob');
+var blobUtil = require('blobUtil');
 var secondsToTime = require('./secondsToTime');
 
 module.exports = function () {
@@ -25,9 +26,9 @@ module.exports = function () {
     return content;
   };
 
-  this.toDataUri = function () {
-    var mimetype = 'text/vtt';
-    var charset = 'UTF-8';
-    return 'data:' + mimetype + ';charset=' + charset + ';base64,' + atob(content);
+  this.toBlobUri = function () {
+    var props = {type: 'text/vtt'};
+    var blob = new Blob(content, props);
+    return blobUtil.createObjectURL(blob);
   };
 };
